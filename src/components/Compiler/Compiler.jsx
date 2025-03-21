@@ -59,7 +59,7 @@ const Compiler = () => {
   return (
     <Paper className="compiler-container" elevation={3} sx={{ padding: 3, maxWidth: '800px', margin: 'auto' }}>
       <Typography variant="h4" gutterBottom align="center" sx={{ fontWeight: 'bold', color: '#333' }}>
-        🚀 Online Code Compiler
+        Online Code Compiler
       </Typography>
 
       {/* Controls Container (Stacked in Column) */}
