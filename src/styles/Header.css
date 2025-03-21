@@ -1,0 +1,85 @@
+/* Header container styling */
+.header {
+  background: #1f2937;         /* Dark gray-blue background */
+  color: #f3f4f6;              /* Light gray text */
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;   /* Space between logo and title */
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Flex container for logo and title */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;               /* Space between logo and title */
+}
+
+/* Logo styling */
+.logo {
+  height: 80px;            /* Fixed size for logo */
+  width: auto;
+  max-width: 160px;        /* Max width to prevent oversizing */
+  object-fit: contain;     /* Maintain aspect ratio */
+  transition: transform 0.3s ease, opacity 0.3s;
+}
+
+/* Hover effect for logo */
+.logo:hover {
+  transform: scale(1.1);     /* Zoom effect */
+  opacity: 0.9;
+}
+
+/* Title styling */
+.title {
+  font-size: 36px;           /* Bold and large title */
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #f9fafb;            /* Slightly off-white text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Logo link styling */
+.logo-link {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+.logo-link:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 40px;
+  }
+  
+  .logo {
+    height: 70px;    /* Smaller logo for medium screens */
+    max-width: 120px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;   /* Stack logo and title vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    height: 60px;             /* Adjust size on small screens */
+    max-width: 100px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

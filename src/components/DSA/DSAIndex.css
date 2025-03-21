@@ -1,0 +1,45 @@
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  
+  .expandable {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .expandable:hover {
+    color: #007BFF;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: #0056b3;
+  }
+  
