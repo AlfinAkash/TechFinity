@@ -1,85 +1,205 @@
-/* Header container styling */
+/* ------------------------------
+🔥 General Styling 
+------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* ------------------------------
+🔥 Header Container 
+------------------------------- */
 .header {
-  background: #1f2937;         /* Dark gray-blue background */
-  color: #f3f4f6;              /* Light gray text */
+  background: #1f2937;                  /* Dark gray-blue background */
+  color: #f3f4f6;                       /* Light gray text */
   padding: 20px 60px;
   display: flex;
-  justify-content: space-between;   /* Space between logo and title */
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  position: relative;
 }
 
-/* Flex container for logo and title */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ------------------------------
+🔥 Logo & Title 
+------------------------------- */
 .header-content {
   display: flex;
   align-items: center;
-  gap: 20px;               /* Space between logo and title */
+  gap: 15px;
 }
 
-/* Logo styling */
 .logo {
-  height: 80px;            /* Fixed size for logo */
+  height: 80px;                      /* Logo size */
   width: auto;
-  max-width: 160px;        /* Max width to prevent oversizing */
-  object-fit: contain;     /* Maintain aspect ratio */
-  transition: transform 0.3s ease, opacity 0.3s;
+  max-width: 150px;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
-/* Hover effect for logo */
 .logo:hover {
-  transform: scale(1.1);     /* Zoom effect */
-  opacity: 0.9;
+  transform: scale(1.1);              /* Zoom effect */
 }
 
-/* Title styling */
 .title {
-  font-size: 36px;           /* Bold and large title */
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #f9fafb;            /* Slightly off-white text */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  color: #f3f4f6;
 }
 
-/* Logo link styling */
-.logo-link {
-  display: inline-block;
-  transition: opacity 0.3s;
+/* ------------------------------
+🔥 Theme Toggle & Menu Button
+------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.logo-link:hover {
-  opacity: 0.9;
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: #f3f4f6;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .header {
-    padding: 20px 40px;
-  }
-  
-  .logo {
-    height: 70px;    /* Smaller logo for medium screens */
-    max-width: 120px;
-  }
-
-  .title {
-    font-size: 28px;
-  }
+.theme-toggle:hover {
+  color: #60a5fa;                      /* Light blue hover */
 }
 
+/* Hamburger Menu Button */
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #f3f4f6;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  color: #60a5fa;                      /* Light blue hover */
+}
+
+/* ------------------------------
+🔥 Navigation Menu
+------------------------------- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+/* Desktop Menu (Horizontal) */
+.nav-menu.desktop {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu.desktop ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu.desktop ul li {
+  margin: 0 15px;
+}
+
+.nav-menu.desktop ul li a {
+  text-decoration: none;
+  color: #f3f4f6;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-menu.desktop ul li a:hover {
+  color: #60a5fa;                      /* Light blue hover */
+}
+
+/* Mobile Menu (Hidden by Default) */
+.nav-menu.open {
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  background: #1f2937;
+  width: 100%;
+  height: calc(100vh - 100px);
+  z-index: 999;
+  box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.nav-menu.open ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  padding: 30px;
+  margin: 0;
+}
+
+.nav-menu.open ul li a {
+  color: #f3f4f6;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-menu.open ul li a:hover {
+  color: #60a5fa;
+}
+
+/* ------------------------------
+🔥 Dark Mode Styling
+------------------------------- */
+.dark {
+  background: #0f172a;                  /* Dark background */
+  color: #e5e7eb;                       /* Light gray text */
+}
+
+.dark .header {
+  background: #111827;                  /* Darker header */
+}
+
+.dark .nav-menu {
+  background: #111827;                  /* Darker menu */
+}
+
+/* ------------------------------
+🔥 Responsive Design
+------------------------------- */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;   /* Stack logo and title vertically */
-    align-items: center;
-    text-align: center;
+  .nav-menu {
+    display: none;
   }
 
-  .logo {
-    height: 60px;             /* Adjust size on small screens */
-    max-width: 100px;
+  .nav-menu.open {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-btn {
+    display: none;                      /* Hide menu button on desktop */
   }
 
-  .title {
-    font-size: 24px;
+  .nav-menu.desktop {
+    display: flex !important;           /* Horizontal menu on desktop */
   }
 }

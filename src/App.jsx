@@ -11,11 +11,17 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Route for Layout component */}
         <Route path="/" element={<Layout />}>
+          {/* Default route */}
           <Route index element={<DSAIndex />} />
+          
+          {/* DSA routes */}
           <Route path="dsa/array/basic" element={<ArrayBasics />} />
           <Route path="dsa/array/medium" element={<ArrayMedium />} />
           <Route path="dsa/array/hard" element={<ArrayHard />} />
+
+          {/* Compiler route */}
           <Route path="compiler" element={<Compiler />} />   {/* Compiler Route */}
         </Route>
       </Routes>
