@@ -32,6 +32,7 @@ const Header = () => {
   return (
     <header className={`header ${darkMode ? "dark-mode" : ""}`}>
       <div className="header-container">
+        
         {/* Logo & Title */}
         <div className="header-content">
           <a href="https://techfinity.vercel.app" className="logo-link">
@@ -41,12 +42,16 @@ const Header = () => {
               className="logo"
             />
           </a>
-          <h1 className="title">TechFinity</h1> {/* Add the title here */}
+          <h1 className="title">TechFinity</h1>
         </div>
 
         {/* Theme & Hamburger Menu */}
         <div className="header-actions">
-          <button className="theme-toggle" onClick={toggleDarkMode} title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+          <button
+            className="theme-toggle"
+            onClick={toggleDarkMode}
+            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
 
@@ -64,7 +69,14 @@ const Header = () => {
               <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
             </li>
             <li>
-              <Link to="/compiler" onClick={() => setIsOpen(false)}>Compiler</Link>
+              <a 
+                href="https://alfincompiler.netlify.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+              >
+                Compiler
+              </a>
             </li>
             {/* Add more links as needed */}
           </ul>

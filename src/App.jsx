@@ -5,7 +5,7 @@ import DSAIndex from "./components/DSA/DSAIndex";
 import ArrayBasics from "./components/DSA/Array/ArrayBasics";
 import ArrayMedium from "./components/DSA/Array/ArrayMedium";
 import ArrayHard from "./components/DSA/Array/ArrayHard";
-import Compiler from "./components/Compiler/Compiler";  // Import the Compiler
+
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="dsa/array/hard" element={<ArrayHard />} />
 
           {/* Compiler route */}
-          <Route path="compiler" element={<Compiler />} />   {/* Compiler Route */}
+         
         </Route>
       </Routes>
     </Router>
